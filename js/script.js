@@ -192,7 +192,7 @@
                     incValue += step;
                     icon.style.fontSize = fontSizeStart * incValue + 'px';
                     targetElement.style.paddingTop = paddingFirst * 1/incValue + 'px';
-
+                   
                     if (delta > 0 && incValue >= coef)
                         clearInterval(interval);
                     if (delta < 0 && incValue <= coef)
@@ -203,9 +203,13 @@
                 var logoCircles = document.getElementsByClassName(className);
                 for (var i = 0; i < logoCircles.length; i++) {
                     logoCircles[i].onmouseenter = function (e) {
+                        if (e.target.classList.contains('logo_circle'))
+                            e.target.classList.add('active_item');
                         changeSizeIconWrapper(e.target, 1.1);
                     }
                     logoCircles[i].onmouseleave = function (e) {
+                        if (e.target.classList.contains('logo_circle'))
+                            e.target.classList.remove('active_item');
                         changeSizeIconWrapper(e.target, 1 / 1.1);
                     }
 

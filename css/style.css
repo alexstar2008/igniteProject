@@ -261,7 +261,10 @@ header {
     text-align: center;
     vertical-align: middle;
 }
-
+.active_item{
+    background-color:#fff;
+    color:#ffe600;
+}
 .logo_icon {
     color: #ffe600;
     margin: 0 auto;
