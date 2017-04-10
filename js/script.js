@@ -473,14 +473,18 @@
                 var clientsLogos = document.getElementsByClassName('clients_logo');
                 for (var i = 0; i < clientsLogos.length; i++) {
                     clientsLogos[i].onmouseover = function (event) {
-                        var string = event.target.src;             
-                        event.target.src = string.replace(".", "Y.");
-                        console.log(event.target.src);
+                        if (event.target.tagName == 'IMG') {
+                            var string = event.target.src;
+                            event.target.src = string.replace(".", "Y.");
+                        }
+                     
                     }
                     clientsLogos[i].onmouseout = function (event) {
-                        var string = event.target.src;
-                        event.target.src = string.replace("Y.", ".");
-                        console.log(event.target.src);
+                        if (event.target.tagName == 'IMG') {
+                            var string = event.target.src;
+                            event.target.src = string.replace("Y.", ".");
+                        }
+                       
                     }
                 }
 
